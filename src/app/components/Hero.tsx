@@ -1,6 +1,11 @@
+import React from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 
-export function Hero() {
+type HeroProps = {
+  onOpenTrialModal: () => void;
+};
+
+export function Hero({ onOpenTrialModal }: HeroProps) {
   return (
     <section className="reveal-section pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -25,7 +30,10 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group px-8 py-4 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-700 transition-colors flex items-center justify-center gap-2">
+              <button
+                className="group px-8 py-4 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-700 transition-colors flex items-center justify-center gap-2"
+                onClick={onOpenTrialModal}
+              >
                 1분 만에 체험하기
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>

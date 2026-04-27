@@ -1,6 +1,11 @@
+import React from 'react';
 import { Check, X } from 'lucide-react';
 
-export function Comparison() {
+type ComparisonProps = {
+  onOpenTrialModal: () => void;
+};
+
+export function Comparison({ onOpenTrialModal }: ComparisonProps) {
   const features = [
     {
       category: '핵심 기능',
@@ -115,7 +120,10 @@ export function Comparison() {
         </div>
 
         <div className="reveal-item mt-12 text-center">
-          <button className="px-8 py-4 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-700 transition-colors">
+          <button
+            className="px-8 py-4 bg-teal-600 text-white rounded-lg font-semibold hover:bg-teal-700 transition-colors"
+            onClick={onOpenTrialModal}
+          >
             무료로 시작하기
           </button>
           <p className="text-sm text-gray-600 mt-4">신용카드 등록 없이 바로 사용 가능합니다</p>

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Header } from './components/Header';
@@ -7,8 +7,11 @@ import { Features } from './components/Features';
 import { Comparison } from './components/Comparison';
 import { Pricing } from './components/Pricing';
 import { Footer } from './components/Footer';
+import { TrialRequestModal } from './components/TrialRequestModal';
 
 export default function App() {
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -57,16 +60,34 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!isTrialModalOpen) {
+      return undefined;
+    }
+
+    const handleEscapeKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsTrialModalOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscapeKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleEscapeKeyDown);
+    };
+  }, [isTrialModalOpen]);
+
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Header onOpenTrialModal={() => setIsTrialModalOpen(true)} />
       <main>
-        <Hero />
+        <Hero onOpenTrialModal={() => setIsTrialModalOpen(true)} />
         <Features />
-        <Comparison />
+        <Comparison onOpenTrialModal={() => setIsTrialModalOpen(true)} />
         <Pricing />
       </main>
       <Footer />
+      <TrialRequestModal isOpen={isTrialModalOpen} onClose={() => setIsTrialModalOpen(false)} />
     </div>
   );
 }

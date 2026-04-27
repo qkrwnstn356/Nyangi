@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
-export function Header() {
+type HeaderProps = {
+  onOpenTrialModal: () => void;
+};
+
+export function Header({ onOpenTrialModal }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const navItems = [
@@ -148,7 +152,10 @@ export function Header() {
             <button className="px-4 py-2 text-gray-700 hover:text-gray-900 transition-colors">
               로그인
             </button>
-            <button className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors">
+            <button
+              className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors"
+              onClick={onOpenTrialModal}
+            >
               무료 체험
             </button>
           </div>
@@ -179,7 +186,10 @@ export function Header() {
                 <button className="px-4 py-2 text-gray-700 hover:text-gray-900 transition-colors">
                   로그인
                 </button>
-                <button className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors">
+                <button
+                  className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors"
+                  onClick={onOpenTrialModal}
+                >
                   무료 체험
                 </button>
               </div>
