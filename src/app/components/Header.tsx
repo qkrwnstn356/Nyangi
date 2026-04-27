@@ -34,7 +34,7 @@ export function Header({ onOpenTrialModal }: HeaderProps) {
       href: '#service',
       menuTitle: '서비스',
       menuDescription: '양이닷컴의 핵심 서비스를 중심으로 팀 운영 흐름을 연결합니다.',
-      featured: 'Slack 기반 핵심 App부터 CRM, Google 연동까지 한 화면에서 확인하세요.',
+      featured: '팀 운영에 필요한 핵심 Slack App 기능을 빠르게 시작할 수 있습니다.',
       groups: [
         {
           title: 'Slack App',
@@ -44,32 +44,6 @@ export function Header({ onOpenTrialModal }: HeaderProps) {
             { label: '커뮤니티', href: '#features', description: '사내 소통 채널과 활동 운영' },
             { label: 'HR 관리', href: '#features', description: '인사 관련 업무를 간편하게 처리' },
             { label: '예약 관리', href: '#features', description: '회의실과 자원을 효율적으로 예약' },
-          ],
-        },
-        {
-          title: 'Google Service',
-          links: [{ label: 'Google Workspace 연동', href: '#features', description: '메일/캘린더 연계' }],
-        },
-        {
-          title: 'Slack CRM',
-          links: [{ label: '고객 관계 관리', href: '#features', description: '고객 채널 기반 CRM' }],
-        },
-      ],
-    },
-    {
-      label: '솔루션',
-      href: '#solution',
-      menuTitle: '솔루션',
-      menuDescription: '업무 맥락에 맞춘 확장 솔루션으로 조직 운영 자동화를 완성합니다.',
-      featured: '명함 App부터 AI 기반 확장 기능까지 필요한 만큼 조합해서 사용할 수 있습니다.',
-      groups: [
-        {
-          title: '솔루션',
-          links: [
-            { label: '명함 App', href: '#features', description: '연락처 공유와 관리 흐름을 디지털화' },
-            { label: '스워밍 커스텀 대화상자', href: '#features', description: '상황별 맞춤 대화 UX 제공' },
-            { label: '웹 채널 연동', href: '#features', description: '웹 문의를 Slack으로 실시간 연결' },
-            { label: 'AI', href: '#features', description: '반복 업무를 줄이는 지능형 자동화' },
           ],
         },
       ],
@@ -201,9 +175,9 @@ export function Header({ onOpenTrialModal }: HeaderProps) {
       {/* Desktop Full-width Mega Menu */}
       {activeMenuData && (
         <div className="hidden md:block absolute left-0 right-0 top-full border-t border-gray-200 bg-white shadow-2xl">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-12 gap-7">
-              <div className="col-span-3 rounded-2xl border border-gray-200 bg-gray-50 p-6">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+            <div className="grid grid-cols-12 gap-5">
+              <div className="col-span-3 rounded-2xl border border-gray-200 bg-gray-50 p-5">
                 <p className="text-xs uppercase tracking-[0.12em] text-teal-600 font-semibold mb-3">
                   {activeMenuData.menuTitle}
                 </p>
@@ -228,7 +202,7 @@ export function Header({ onOpenTrialModal }: HeaderProps) {
                   {activeMenuData.groups.map((group) => (
                     <div
                       key={group.title}
-                      className="rounded-2xl p-5"
+                      className="rounded-2xl p-4"
                     >
                       <p className="text-sm font-semibold text-gray-900 mb-3">{group.title}</p>
                       <div className="space-y-2">
