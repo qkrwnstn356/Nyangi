@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-teal-600 rounded-lg"></div>
-              <span className="font-bold text-xl text-white">Nyangi</span>
+              <span className="font-bold text-xl text-white">Slack Nyangi</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
               Slack 기반의 조직문화와 협업을 자동화하는 스마트한 솔루션
@@ -122,7 +122,7 @@ export function Footer() {
         <div className="border-t border-gray-800 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2026 Nyangi. All rights reserved.
+              © 2026 Slack Nyangi. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
