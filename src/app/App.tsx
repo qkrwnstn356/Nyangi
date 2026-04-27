@@ -8,6 +8,7 @@ import { Comparison } from './components/Comparison';
 import { Pricing } from './components/Pricing';
 import { Footer } from './components/Footer';
 import { TrialRequestModal } from './components/TrialRequestModal';
+import { GoTopButton } from './components/GoTopButton';
 
 export default function App() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
@@ -87,6 +88,7 @@ export default function App() {
         <Pricing />
       </main>
       <Footer />
+      <GoTopButton />
       <TrialRequestModal isOpen={isTrialModalOpen} onClose={() => setIsTrialModalOpen(false)} />
     </div>
   );

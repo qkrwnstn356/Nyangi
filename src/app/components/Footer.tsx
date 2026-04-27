@@ -1,6 +1,9 @@
+import React from 'react';
 import { Mail, MessageCircle, FileText, Phone } from 'lucide-react';
 
 export function Footer() {
+  const nyangiLogo = new URL('../../assets/nyangi-logo-transparent.png', import.meta.url).href;
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -8,7 +11,11 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-teal-600 rounded-lg"></div>
+              <img
+                src={nyangiLogo}
+                alt="Nyangi logo"
+                className="block w-[50px] h-8 object-contain object-center brightness-0 invert"
+              />
               <span className="font-bold text-xl text-white">Slack Nyangi</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">

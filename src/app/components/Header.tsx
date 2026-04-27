@@ -26,6 +26,7 @@ type NavItem = {
 };
 
 export function Header({ onOpenTrialModal }: HeaderProps) {
+  const nyangiLogo = new URL('../../assets/nyangi-logo-transparent.png', import.meta.url).href;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const navItems: NavItem[] = [
@@ -94,7 +95,7 @@ export function Header({ onOpenTrialModal }: HeaderProps) {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-12">
             <a href="/" className="flex items-center gap-2 flex-shrink-0">
-              <div className="w-8 h-8 bg-teal-600 rounded-lg"></div>
+              <img src={nyangiLogo} alt="Nyangi logo" className="block w-[50px] h-8 object-contain object-center" />
               <span className="font-bold text-xl text-gray-900">Slack Nyangi</span>
             </a>
 
