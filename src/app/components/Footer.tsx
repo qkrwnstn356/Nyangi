@@ -6,10 +6,10 @@ export function Footer() {
 
   return (
     <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
           {/* Company Info */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img
                 src={nyangiLogo}
@@ -42,8 +42,8 @@ export function Footer() {
 
           {/* Product */}
           <div>
-            <h4 className="font-semibold text-white mb-4">제품</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-white mb-3">제품</h4>
+            <ul className="space-y-2">
               <li>
                 <a href="#features" className="text-gray-400 hover:text-white transition-colors text-sm">
                   기능 소개
@@ -69,8 +69,8 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold text-white mb-4">회사</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-white mb-3">회사</h4>
+            <ul className="space-y-2">
               <li>
                 <a href="#company" className="text-gray-400 hover:text-white transition-colors text-sm">
                   회사 소개
@@ -95,9 +95,9 @@ export function Footer() {
           </div>
 
           {/* Support */}
-          <div>
-            <h4 className="font-semibold text-white mb-4">고객지원</h4>
-            <ul className="space-y-3">
+          <div className="col-span-2 lg:col-span-1">
+            <h4 className="font-semibold text-white mb-3">고객지원</h4>
+            <ul className="space-y-2">
               <li className="flex items-center gap-2 text-sm">
                 <Mail className="w-4 h-4 text-gray-400" />
                 <a href="mailto:support@nyangi.com" className="text-gray-400 hover:text-white transition-colors">
@@ -126,12 +126,12 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 mt-8">
+        <div className="border-t border-gray-800 pt-6 mt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
               © 2026 Slack Nyangi. All rights reserved.
             </p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 개인정보처리방침
               </a>
