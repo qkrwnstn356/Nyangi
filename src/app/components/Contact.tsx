@@ -226,8 +226,8 @@ export function Contact() {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">주소</h3>
                   <p className="text-gray-600 text-sm">
-                    서울특별시 강남구 테헤란로 123<br />
-                    Nyangi 빌딩 10층
+                    서울특별시 강남구 봉은사로 434<br />
+                    석수빌딩 1층
                   </p>
                 </div>
               </div>
