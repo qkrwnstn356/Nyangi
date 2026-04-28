@@ -125,7 +125,7 @@ export function TrialRequestModal({ isOpen, onClose }: TrialRequestModalProps) {
             type="submit"
             className="mt-2 w-full rounded-lg bg-teal-600 px-4 py-3 font-semibold text-white transition-colors hover:bg-teal-700"
           >
-            제출하기
+            체험 신청하기
           </button>
         </form>
       </div>
