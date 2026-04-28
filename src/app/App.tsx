@@ -9,6 +9,8 @@ import { Pricing } from './components/Pricing';
 import { Footer } from './components/Footer';
 import { TrialRequestModal } from './components/TrialRequestModal';
 import { GoTopButton } from './components/GoTopButton';
+import { Notice } from './components/Notice';
+import { Contact } from './components/Contact';
 
 export default function App() {
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);

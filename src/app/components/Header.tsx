@@ -32,7 +32,7 @@ export function Header({ onOpenTrialModal }: HeaderProps) {
   const navItems: NavItem[] = [
     {
       label: '서비스',
-      href: '#service',
+      href: '/#features',
       menuTitle: '서비스',
       menuDescription: '양이닷컴의 핵심 서비스를 중심으로 팀 운영 흐름을 연결합니다.',
       featured: '팀 운영에 필요한 핵심 Slack App 기능을 빠르게 시작할 수 있습니다.',
@@ -40,18 +40,18 @@ export function Header({ onOpenTrialModal }: HeaderProps) {
         {
           title: 'Slack App',
           links: [
-            { label: '조직도', href: '#features', description: '팀 구조와 역할을 한눈에 확인' },
-            { label: '온보딩', href: '#features', description: '입사자 적응 과정을 자동화' },
-            { label: '커뮤니티', href: '#features', description: '사내 소통 채널과 활동 운영' },
-            { label: 'HR 관리', href: '#features', description: '인사 관련 업무를 간편하게 처리' },
-            { label: '예약 관리', href: '#features', description: '회의실과 자원을 효율적으로 예약' },
+            { label: '조직도', href: '/#features', description: '팀 구조와 역할을 한눈에 확인' },
+            { label: '온보딩', href: '/#features', description: '입사자 적응 과정을 자동화' },
+            { label: '커뮤니티', href: '/#features', description: '사내 소통 채널과 활동 운영' },
+            { label: 'HR 관리', href: '/#features', description: '인사 관련 업무를 간편하게 처리' },
+            { label: '예약 관리', href: '/#features', description: '회의실과 자원을 효율적으로 예약' },
           ],
         },
       ],
     },
     {
       label: '요금제',
-      href: '#pricing',
+      href: '/#pricing',
       menuTitle: '플랜 안내',
       menuDescription: '팀 규모와 운영 방식에 맞는 플랜을 선택하세요.',
       featured: '14일 무료 체험으로 부담 없이 바로 시작할 수 있습니다.',
@@ -59,16 +59,16 @@ export function Header({ onOpenTrialModal }: HeaderProps) {
         {
           title: '요금제',
           links: [
-            { label: 'Starter', href: '#pricing', description: '소규모 팀 시작 플랜' },
-            { label: 'Professional', href: '#pricing', description: '성장 팀 추천 플랜' },
-            { label: 'Enterprise', href: '#pricing', description: '대규모 조직 맞춤 플랜' },
+            { label: 'Starter', href: '/#pricing', description: '소규모 팀 시작 플랜' },
+            { label: 'Professional', href: '/#pricing', description: '성장 팀 추천 플랜' },
+            { label: 'Enterprise', href: '/#pricing', description: '대규모 조직 맞춤 플랜' },
           ],
         },
       ],
     },
     {
       label: '리소스',
-      href: '#resources',
+      href: '/#resources',
       menuTitle: '리소스',
       menuDescription: '제품 활용 정보와 소식을 모아 필요한 자료를 빠르게 찾을 수 있습니다.',
       featured: '업데이트 소식부터 문의까지 리소스 허브에서 한 번에 확인하세요.',
@@ -76,9 +76,9 @@ export function Header({ onOpenTrialModal }: HeaderProps) {
         {
           title: '리소스',
           links: [
-            { label: '블로그', href: '#resources', description: '운영 노하우와 제품 인사이트 콘텐츠' },
-            { label: '공지사항', href: '#resources', description: '업데이트 및 서비스 변경 소식' },
-            { label: '문의하기', href: '#resources', description: '도입 상담과 기술 지원 요청' },
+            { label: '블로그', href: '/#resources', description: '운영 노하우와 제품 인사이트 콘텐츠' },
+            { label: '공지사항', href: '/notice', description: '업데이트 및 서비스 변경 소식' },
+            { label: '문의하기', href: '/contact', description: '도입 상담과 기술 지원 요청' },
           ],
         },
       ],
