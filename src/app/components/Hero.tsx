@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Play } from 'lucide-react';
 
 type HeroProps = {
@@ -6,6 +6,58 @@ type HeroProps = {
 };
 
 export function Hero({ onOpenTrialModal }: HeroProps) {
+  const [isDemoPlaying, setIsDemoPlaying] = useState(false);
+  const stopTimerRef = useRef<number | null>(null);
+  const demoVideoRef = useRef<HTMLVideoElement>(null);
+
+  const stopDemo = () => {
+    if (stopTimerRef.current !== null) {
+      window.clearTimeout(stopTimerRef.current);
+      stopTimerRef.current = null;
+    }
+
+    const video = demoVideoRef.current;
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    setIsDemoPlaying(false);
+  };
+
+  const handlePlayDemo = async () => {
+    const video = demoVideoRef.current;
+    if (!video) {
+      return;
+    }
+
+    if (stopTimerRef.current !== null) {
+      window.clearTimeout(stopTimerRef.current);
+      stopTimerRef.current = null;
+    }
+
+    setIsDemoPlaying(true);
+    stopTimerRef.current = window.setTimeout(() => {
+      stopDemo();
+    }, 5000);
+
+    try {
+      video.currentTime = 0;
+      video.load();
+      await video.play();
+    } catch {
+      stopDemo();
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (stopTimerRef.current !== null) {
+        window.clearTimeout(stopTimerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="reveal-section pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -37,7 +89,10 @@ export function Hero({ onOpenTrialModal }: HeroProps) {
                 1분 만에 체험하기
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
+              <button
+                className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
+                onClick={handlePlayDemo}
+              >
                 <Play className="w-5 h-5" />
                 데모 영상 보기
               </button>
@@ -60,11 +115,26 @@ export function Hero({ onOpenTrialModal }: HeroProps) {
           </div>
 
           <div className="hero-visual relative">
-            <div className="aspect-[4/3] rounded-2xl bg-teal-100 shadow-2xl overflow-hidden">
+            <div className="relative aspect-[4/3] rounded-2xl bg-teal-100 shadow-2xl overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1758691736843-90f58dce465e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                 alt="Team collaboration"
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover transition-opacity duration-500 ${
+                  isDemoPlaying ? 'opacity-0' : 'opacity-100'
+                }`}
+              />
+              <video
+                ref={demoVideoRef}
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
+                  isDemoPlaying ? 'opacity-100' : 'opacity-0'
+                }`}
+                src="https://assets.mixkit.co/active_storage/video_items/100319/1722990360/100319-video-720.mp4"
+                poster="https://images.unsplash.com/photo-1758691736843-90f58dce465e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+                muted
+                playsInline
+                preload="metadata"
+                onEnded={stopDemo}
+                onError={stopDemo}
               />
             </div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-teal-400 rounded-full blur-3xl opacity-30"></div>
