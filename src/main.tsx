@@ -8,8 +8,12 @@ import DownloadPage from './app/DownloadPage.tsx';
 import './styles/index.css';
 
 const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+const pageParam = new URLSearchParams(window.location.search).get('page');
 
 const page = (() => {
+  if (pageParam === 'download') {
+    return <DownloadPage />;
+  }
   if (pathname === '/notice') {
     return <NoticePage />;
   }

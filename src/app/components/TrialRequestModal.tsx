@@ -38,7 +38,9 @@ export function TrialRequestModal({ isOpen, onClose }: TrialRequestModalProps) {
     setPhoneError('');
     onClose();
     window.alert('신청이 완료되었습니다.');
-    window.location.href = '/download';
+    const downloadUrl = new URL(window.location.href);
+    downloadUrl.searchParams.set('page', 'download');
+    window.location.assign(downloadUrl.toString());
   };
 
   return (
