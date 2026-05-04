@@ -36,8 +36,9 @@ export function TrialRequestModal({ isOpen, onClose }: TrialRequestModalProps) {
     }
 
     setPhoneError('');
-    window.alert('무료 체험 신청이 완료되었습니다.');
     onClose();
+    window.alert('신청이 완료되었습니다.');
+    window.location.href = '/download';
   };
 
   return (
