@@ -64,7 +64,7 @@ export function Hero({ onOpenTrialModal }: HeroProps) {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="inline-block px-4 py-2 bg-teal-100 text-teal-700 rounded-full text-sm font-medium">
-              Slack 기반 조직문화 자동화 플랫폼1
+              Slack 기반 조직문화 자동화 플랫폼
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
