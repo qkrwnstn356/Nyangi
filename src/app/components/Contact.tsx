@@ -180,6 +180,7 @@ export function Contact() {
 
                 <button
                   type="submit"
+                  onClick={handleSubmit}
                   className="w-full py-4 bg-[oklch(51.1%_.096_186.391)] text-white rounded-lg font-semibold hover:bg-[oklch(45%_.096_186.391)] transition-all"
                 >
                   문의하기

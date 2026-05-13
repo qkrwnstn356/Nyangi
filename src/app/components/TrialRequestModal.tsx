@@ -1,5 +1,5 @@
 import React, { FormEvent, useEffect, useState } from 'react';
-import { X } from 'lucide-react';
+import { CloudCog, X } from 'lucide-react';
 
 type TrialRequestModalProps = {
   isOpen: boolean;
@@ -37,6 +37,7 @@ export function TrialRequestModal({ isOpen, onClose }: TrialRequestModalProps) {
 
     setPhoneError('');
     onClose();
+    console.log(`이름: ${name}, 핸드폰 번호: ${phone}, 이메일: ${email}`);
     window.alert('신청이 완료되었습니다.');
     const downloadUrl = new URL(window.location.href);
     downloadUrl.searchParams.set('page', 'download');
